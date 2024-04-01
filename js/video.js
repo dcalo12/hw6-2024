@@ -50,7 +50,7 @@ window.addEventListener("load", function() {
             volumeText.textContent = 'Muted';
 			console.log(volumeText.textContent)
         } else {
-            volumeText.textContent = 'Unmuted';
+            volumeText.textContent = 'Unmute';
 			console.log(volumeText.textContent);
         }
     });
