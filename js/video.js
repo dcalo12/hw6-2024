@@ -49,9 +49,11 @@ window.addEventListener("load", function() {
         if (video.muted) {
             volumeText.textContent = 'Muted';
 			console.log(volumeText.textContent)
+			document.querySelector("#mute").innerText = "Unmute";
         } else {
             volumeText.textContent = 'Unmute';
 			console.log(volumeText.textContent);
+			document.querySelector("#mute").innerText = "Mute";
         }
     });
 
