@@ -1,16 +1,9 @@
 window.addEventListener("load", function() {
 	console.log("Good job opening the window")
 	const video = document.getElementById('player1');
-    // const playBtn = document.getElementById('play');
-    // const pauseBtn = document.getElementById('pause');
-    // const slowerBtn = document.getElementById('slower');
-    // const fasterBtn = document.getElementById('faster');
-    // const skipBtn = document.getElementById('skip');
-    // const muteBtn = document.getElementById('mute');
+    
     const volumeSlider = document.getElementById('slider');
     const volumeText = document.getElementById('volume');
-    // const vintageBtn = document.getElementById('vintage');
-    // const origBtn = document.getElementById('orig');
 
     video.autoplay = false;
     video.loop = false;
@@ -60,8 +53,8 @@ window.addEventListener("load", function() {
     volumeSlider.addEventListener('input', function() {
         video.volume = volumeSlider.value / 100;
         volumeText.textContent = volumeSlider.value + '%';
-		// console.log("Volume Slider:", volumeText.textContent);
-	    	document.querySelector("#slider).innerText = volume.Text.textContent;
+		// document.querySelector("#slider").innerText = volumeText.textContent;
+		console.log("Volume:", volumeText.textContent);
     });
 
     document.getElementById('vintage').addEventListener('click', function() {
