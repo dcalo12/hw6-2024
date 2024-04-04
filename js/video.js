@@ -1,9 +1,6 @@
 window.addEventListener("load", function() {
 	console.log("Good job opening the window")
 	const video = document.getElementById('player1');
-    
-    const volumeSlider = document.getElementById('slider');
-    const volumeText = document.getElementById('volume');
 
     video.autoplay = false;
     video.loop = false;
@@ -11,9 +8,9 @@ window.addEventListener("load", function() {
     document.getElementById('play').addEventListener('click', function() {
         video.play();
 		console.log("Play Video");
-		video.volume = volumeSlider.value / 100;
-        volumeText.textContent = volumeSlider.value + '%';
-		console.log("Volume:", volumeText.textContent);
+		video.volume = document.getElementById('slider').value / 100;
+        document.getElementById('volume').textContent = document.getElementById('slider').value + '%';
+		console.log("Volume:", document.getElementById('volume').textContent);
     });
 
     document.getElementById('pause').addEventListener('click', function() {
@@ -43,21 +40,20 @@ window.addEventListener("load", function() {
     document.getElementById('mute').addEventListener('click', function() {
         video.muted = !video.muted;
         if (video.muted) {
-            volumeText.textContent = 'Muted';
-			console.log(volumeText.textContent)
+            document.getElementById('volume').textContent = 'Muted';
+			console.log(document.getElementById('volume').textContent)
 			document.querySelector("#mute").innerText = "Unmute";
         } else {
-            volumeText.textContent = 'Unmute';
-			console.log(volumeText.textContent);
+            document.getElementById('volume').textContent = 'Unmute';
+			console.log(document.getElementById('volume').textContent);
 			document.querySelector("#mute").innerText = "Mute";
         }
     });
 
-    volumeSlider.addEventListener('input', function() {
-        video.volume = volumeSlider.value / 100;
-        volumeText.textContent = volumeSlider.value + '%';
-		// document.querySelector("#slider").innerText = volumeText.textContent;
-		console.log("Volume:", volumeText.textContent);
+    document.getElementById('slider').addEventListener('input', function() {
+        video.volume = document.getElementById('slider').value / 100;
+        document.getElementById('volume').textContent = document.getElementById('slider').value + '%';
+		console.log("Volume:", document.getElementById('volume').textContent);
     });
 
     document.getElementById('vintage').addEventListener('click', function() {
@@ -71,7 +67,4 @@ window.addEventListener("load", function() {
     });
 });
 
-// document.querySelector("#play").addEventListener("click", function() {
-// 	console.log("Play Video");
-// });
 
