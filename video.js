@@ -53,8 +53,8 @@ window.addEventListener("load", function() {
     volumeSlider.addEventListener('input', function() {
         video.volume = volumeSlider.value / 100;
         volumeText.textContent = volumeSlider.value + '%';
-		document.querySelector("#slider").innerText = volumeText.textContent;
-		// console.log("Volume Slider:", volumeText.textContent);
+		// document.querySelector("#slider").innerText = volumeText.textContent;
+		console.log("Volume Slider:", volumeText.textContent);
     });
 
     document.getElementById('vintage').addEventListener('click', function() {
